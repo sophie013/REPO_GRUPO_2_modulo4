@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Costo de Envío</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Calculador de Costos de Envío</h1>
+
+        <section class="calculator-card">
+            <label for="totalCompra">Total de la compra ($):</label>
+            <input type="number" id="totalCompra" placeholder="Ej: 35000" min="0">
+            <button id="btnCalcular">Calcular Envío</button>
+        </section>
+
+        <section class="shipping-rules">
+            <h2>Nuestras Tarifas</h2>
+            <div class="rule-grid">
+                <div class="rule-item" id="rule-a">
+                    <h3>Básico</h3>
+                    <p>Menor a $30.000</p>
+                    <span>Costo: $5.000</span>
+                </div>
+                <div class="rule-item" id="rule-b">
+                    <h3>Especial</h3>
+                    <p>$30.000 - $69.999</p>
+                    <span>Costo: $2.500</span>
+                </div>
+                <div class="rule-item" id="rule-c">
+                    <h3>Avanzado</h3>
+                    <p>$70.000 - $99.999</p>
+                    <span>Costo: $1.000</span>
+                </div>
+                <div class="rule-item" id="rule-d">
+                    <h3>Premium</h3>
+                    <p>$100.000 o más</p>
+                    <span>¡Envío GRATIS!</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="resultado" class="result-display">
+            <p>Ingresa un monto para ver el detalle de tu envío.</p>
+        </section>
+    </main>
+
+    <script src="assets/js/envioGratis.js"></script>
+</body>
+</html>
