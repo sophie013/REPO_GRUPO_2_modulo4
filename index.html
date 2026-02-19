@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Torneo de Básquet</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Torneo de Básquet 2026</h1>
+            <p>Registro de Jugadores</p>
+        </header>
+
+        <main>
+            <form id="registroForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="1" max="100" placeholder="Ingresa tu edad" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="altura">Altura (en metros):</label>
+                    <input type="number" id="altura" name="altura" min="0.5" max="3" step="0.01" placeholder="Ej: 1.75" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="posicion">Posición Preferida:</label>
+                    <select id="posicion" name="posicion" required>
+                        <option value="">Selecciona una posición</option>
+                        <option value="Base">Base (Point Guard)</option>
+                        <option value="Escolta">Escolta (Shooting Guard)</option>
+                        <option value="Alero">Alero (Small Forward)</option>
+                        <option value="Ala-Pivot">Ala-Pívot (Power Forward)</option>
+                        <option value="Pivot">Pívot (Center)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Registrar Jugador</button>
+            </form>
+
+            <div id="mensaje" class="mensaje"></div>
+
+            <div id="listaJugadores" class="lista-jugadores">
+                <h2>Jugadores Registrados</h2>
+                <div id="jugadoresContainer"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Torneo de Básquet - Todos los derechos reservados</p>
+        </footer>
+    </div>
+
+   <script src="assets/js/requisitos.js"></script>
+</body>
+</html>
