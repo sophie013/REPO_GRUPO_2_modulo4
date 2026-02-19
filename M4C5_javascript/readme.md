@@ -29,3 +29,10 @@ Comparar altura y edad para clasificar al jugador (categoría juvenil o adulto).
 ¿Y si deja el campo vacío?
 
 ¿Qué sucede si la posición ingresada no existe?
+
+
+1 Edad no válida: El programa debe detectar el error mediante un if y mostrar un mensaje advirtiendo que la edad es incorrecta o no cumple el mínimo.
+
+2 Campo vacío: JavaScript recibirá un valor vacío o NaN, por lo que se debe validar la entrada para evitar que el registro continúe sin datos.
+
+3 Posición inexistente: Aunque el select limita las opciones, si se ingresa un valor extraño, el código debe usar un else para indicar que la posición no es válida para el torneo.
