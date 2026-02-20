@@ -8,36 +8,71 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url('../img/slam-dunk-portada.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
     padding: 20px;
-    color: #333;
+    color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background: white;
+    background: transparent;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    position: relative;
+}
+
+.fondo-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+#fondo1 {
+    transition: opacity 1.5s ease-in-out;
+}
+
+#fondo2 {
+    transition: opacity 1.5s ease-in-out;
+}
+
+.contenido {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     color: white;
     text-align: center;
     padding: 40px 20px;
+    background: transparent;
 }
 
 header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-shadow: 2px 2px 4px black;
 }
 
 header p {
     font-size: 1.2em;
+    color: white;
+    text-shadow: 1px 1px 2px black;
     opacity: 0.9;
 }
 
@@ -48,7 +83,7 @@ main {
 
 /* Form */
 #registroForm {
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 30px;
@@ -62,7 +97,8 @@ main {
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #555;
+    color: white;
+    text-shadow: 1px 1px 2px black;
     font-size: 1em;
 }
 
@@ -74,7 +110,8 @@ main {
     border-radius: 8px;
     font-size: 1em;
     transition: all 0.3s ease;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
 }
 
 .form-group input:focus,
@@ -87,9 +124,10 @@ main {
 .btn-submit {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: rgba(102, 126, 234, 0.05);
     color: white;
-    border: none;
+    text-shadow: 1px 1px 2px black;
+    border: 2px solid white;
     border-radius: 8px;
     font-size: 1.1em;
     font-weight: 600;
@@ -100,9 +138,35 @@ main {
 .btn-submit:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    background: rgba(102, 126, 234, 0.2);
 }
 
 .btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-clear {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 107, 107, 0.05);
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 20px;
+}
+
+.btn-clear:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(238, 90, 90, 0.4);
+    background: rgba(255, 107, 107, 0.2);
+}
+
+.btn-clear:active {
     transform: translateY(0);
 }
 
@@ -114,6 +178,16 @@ main {
     font-weight: 500;
     display: none;
     animation: slideIn 0.3s ease;
+    width: 90%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .mensaje.show {
@@ -121,21 +195,24 @@ main {
 }
 
 .mensaje.exito {
-    background: #d4edda;
-    color: #155724;
-    border: 2px solid #c3e6cb;
+    background: rgba(40, 167, 69, 0.9);
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border: 2px solid white;
 }
 
 .mensaje.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 2px solid #f5c6cb;
+    background: rgba(220, 53, 69, 0.9);
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border: 2px solid white;
 }
 
 .mensaje.info {
-    background: #d1ecf1;
-    color: #0c5460;
-    border: 2px solid #bee5eb;
+    background: rgba(0, 123, 255, 0.9);
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border: 2px solid white;
 }
 
 /* Lista de Jugadores */
@@ -144,7 +221,8 @@ main {
 }
 
 .lista-jugadores h2 {
-    color: #667eea;
+    color: white;
+    text-shadow: 1px 1px 2px black;
     margin-bottom: 20px;
     font-size: 1.8em;
 }
@@ -155,9 +233,10 @@ main {
 }
 
 .jugador-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-left: 5px solid #667eea;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -168,7 +247,8 @@ main {
 }
 
 .jugador-card h3 {
-    color: #333;
+    color: white;
+    text-shadow: 1px 1px 2px black;
     margin-bottom: 10px;
     font-size: 1.3em;
 }
@@ -184,10 +264,18 @@ main {
     display: flex;
     align-items: center;
     gap: 5px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
 .info-item strong {
-    color: #555;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.info-item span {
+    color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
 .estado {
@@ -197,6 +285,30 @@ main {
     font-size: 0.9em;
     font-weight: 600;
     margin-top: 10px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-eliminar {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    background: #dc3545;
+    color: white;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-eliminar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(220, 53, 69, 0.5);
 }
 
 .estado.aceptado {
@@ -211,8 +323,9 @@ main {
 
 /* Footer */
 footer {
-    background: #2c3e50;
+    background: rgba(44, 62, 80, 0.9);
     color: white;
+    text-shadow: 1px 1px 2px black;
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
