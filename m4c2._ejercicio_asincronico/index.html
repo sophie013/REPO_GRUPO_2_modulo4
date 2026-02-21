@@ -1,43 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculador de Costo de Envío</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
     <main class="container">
+        <!-- Decoración interior del marco -->
+        <img src="assets/img/Decoracion Marco.png" alt="" class="decor-marco">
+
         <h1>Calculador de Costos de Envío</h1>
 
         <section class="calculator-card">
-            <label for="totalCompra">Total de la compra ($):</label>
-            <input type="number" id="totalCompra" placeholder="Ej: 35000" min="0">
-            <button id="btnCalcular">Calcular Envío</button>
+            <div class="input-container">
+                <label for="totalCompra">Total de la compra ($):</label>
+                <div class="input-group">
+                    <img src="assets/img/Barra1.png" alt="Decoration" class="decoration-bar">
+                    <input type="number" id="totalCompra" placeholder="Ej: 35000" min="0">
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="btnCalcular" class="calc-btn">
+                    <img src="assets/img/Barra2.png" alt="Button decoration" class="btn-bg">
+                    <span class="btn-text">Calcular Envío</span>
+                </button>
+            </div>
         </section>
 
         <section class="shipping-rules">
             <h2>Nuestras Tarifas</h2>
             <div class="rule-grid">
                 <div class="rule-item" id="rule-a">
-                    <h3>Básico</h3>
-                    <p>Menor a $30.000</p>
-                    <span>Costo: $5.000</span>
+                    <img src="assets/img/Icon1.png" alt="Camión" class="rule-icon">
+                    <div class="rule-content">
+                        <h3>Básico</h3>
+                        <p>Menor a $30.000</p>
+                        <span>Costo: $5.000</span>
+                    </div>
                 </div>
                 <div class="rule-item" id="rule-b">
-                    <h3>Especial</h3>
-                    <p>$30.000 - $69.999</p>
-                    <span>Costo: $2.500</span>
+                    <img src="assets/img/Icon2.png" alt="Caja" class="rule-icon">
+                    <div class="rule-content">
+                        <h3>Especial</h3>
+                        <p>$30.000 - $69.999</p>
+                        <span>Costo: $2.500</span>
+                    </div>
                 </div>
                 <div class="rule-item" id="rule-c">
-                    <h3>Avanzado</h3>
-                    <p>$70.000 - $99.999</p>
-                    <span>Costo: $1.000</span>
+                    <img src="assets/img/Icon3.png" alt="Mano con moneda" class="rule-icon">
+                    <div class="rule-content">
+                        <h3>Avanzado</h3>
+                        <p>$70.000 - $99.999</p>
+                        <span>Costo: $1.000</span>
+                    </div>
                 </div>
                 <div class="rule-item" id="rule-d">
-                    <h3>Premium</h3>
-                    <p>$100.000 o más</p>
-                    <span>¡Envío GRATIS!</span>
+                    <img src="assets/img/Icon4.png" alt="Monedas" class="rule-icon">
+                    <div class="rule-content">
+                        <h3>Premium</h3>
+                        <p>$100.000 o más</p>
+                        <span>¡Envío GRATIS!</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -49,4 +76,5 @@
 
     <script src="assets/js/envioGratis.js"></script>
 </body>
+
 </html>
